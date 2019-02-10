@@ -8,8 +8,7 @@ const counterRouter = require('./controllers/counter')
 const winnersRouter = require('./controllers/winners')
 
 const config = require('./utils/config')
-
-// MONGODB_URI=mongodb://Masavain:Nappipeli123@ds223605.mlab.com:23605/nappipeli
+const  MONGODB_URI='mongodb://Masavain:Nappipeli123@ds223605.mlab.com:23605/nappipeli'
 // PORT=4001
 
 
@@ -18,7 +17,7 @@ const server = require('http').createServer(app)
 server.listen(config.port, () => console.log(`Listening on port ${config.port}`))
 const io = require('socket.io')(server);
 
-mongoose.connect(config.mongoUrl, {useNewUrlParser: true}) 
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true}) 
 mongoose.Promise = global.Promise
 
 app.use(cors())
