@@ -20,7 +20,9 @@ app.use(express.static('build'))
 app.use(middleware.logger)
 app.use('/api/counters', counterRouter)
 app.use('/api/winners', winnersRouter)
-
+app.get('/*', (req, res) => {
+  res.sendFile(__dirname + '/build/index.html')
+})
 app.use(middleware.logger)
 app.use(middleware.error)
 
