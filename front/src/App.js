@@ -9,7 +9,7 @@ class App extends Component {
     super()
 
     this.state = {
-      endpoint: "https://nappupeli.herokuapp.com:4001",
+      endpoint: "https://nappupeli.herokuapp.com/socket.io/?EIO=4&transport=websocket",
       // endpoint: "http://127.0.0.1:4001",
       count: 0,
       winCategory: 100,
