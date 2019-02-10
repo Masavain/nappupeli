@@ -10,4 +10,4 @@ The game can be played simultaneously on many screens but the screen loading may
 
 Also apologize for the front being almost just a single component, it's because I'm nowadays used to using Redux, but for some reason did not get Redux to work with Socket.io.
 
-The game is supposed to be running at nappupeli.herokuapp.com but I stumbled upon problems with socket.io and Heroku co-operating so the app crashes. To test the app you should clone this repository, run npm install on both the root directory as well as "front" -directory. After that run "./deploy.sh" in the front directory and then starting the app with npm start (in the root directory) should start the application. 
+The game is running at nappupeli.herokuapp.com
