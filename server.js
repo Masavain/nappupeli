@@ -14,6 +14,8 @@ const config = require('./utils/config')
 
 
 const app = express()
+const server = require('http').createServer(app)
+const io = require('socket.io')(server);
 
 mongoose.connect(config.mongoUrl)
 mongoose.Promise = global.Promise
@@ -29,9 +31,6 @@ app.get('/*', (req, res) => {
 })
 app.use(middleware.logger)
 app.use(middleware.error)
-
-const server = http.createServer(app)
-var io = require('socket.io').listen(server);
 
 io.on('connection', socket => {
   console.log('New client connected')
