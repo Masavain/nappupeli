@@ -9,7 +9,8 @@ class App extends Component {
     super()
 
     this.state = {
-      endpoint: "http://127.0.0.1:4001",
+      endpoint: "https://nappupeli.herokuapp.com:4001",
+      // endpoint: "http://127.0.0.1:4001",
       count: 0,
       winCategory: 100,
       pressed: false,

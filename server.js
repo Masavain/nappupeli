@@ -15,6 +15,7 @@ const config = require('./utils/config')
 
 const app = express()
 const server = require('http').createServer(app)
+server.listen(config.port, () => console.log(`Listening on port ${config.port}`))
 const io = require('socket.io')(server);
 
 mongoose.connect(config.mongoUrl)
@@ -45,4 +46,3 @@ io.on('connection', socket => {
   })
 })
 
-server.listen(config.port, () => console.log(`Listening on port ${config.port}`))
