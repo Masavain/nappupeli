@@ -18,7 +18,7 @@ const server = require('http').createServer(app)
 server.listen(config.port, () => console.log(`Listening on port ${config.port}`))
 const io = require('socket.io')(server);
 
-mongoose.connect(config.mongoUrl)
+mongoose.connect(config.mongoUrl, {useNewUrlParser: true}) 
 mongoose.Promise = global.Promise
 
 app.use(cors())
