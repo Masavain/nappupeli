@@ -9,6 +9,10 @@ const winnersRouter = require('./controllers/winners')
 
 const config = require('./utils/config')
 
+// MONGODB_URI=mongodb://Masavain:Nappipeli123@ds223605.mlab.com:23605/nappipeli
+// PORT=4001
+
+
 const app = express()
 
 mongoose.connect(config.mongoUrl)
