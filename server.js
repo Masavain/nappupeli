@@ -10,15 +10,14 @@ const winnersRouter = require('./controllers/winners')
 const config = require('./utils/config')
 const  MONGODB_URI='mongodb://Masavain:Nappipeli123@ds223605.mlab.com:23605/nappipeli'
 // PORT=4001
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true}) 
+mongoose.Promise = global.Promise
 
 
 const app = express()
 const server = require('http').createServer(app)
-server.listen(config.port, () => console.log(`Listening on port ${config.port}`))
 const io = require('socket.io')(server);
 
-mongoose.connect(MONGODB_URI, {useNewUrlParser: true}) 
-mongoose.Promise = global.Promise
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -44,4 +43,5 @@ io.on('connection', socket => {
     console.log('user disconnected')
   })
 })
+server.listen(config.port, () => console.log(`Listening on port ${config.port}`))
 
